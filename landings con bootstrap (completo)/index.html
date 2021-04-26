@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maquetacion con bootstrap</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <style>
+    html,body{
+      height: 100%;
+      width: 100%;
+    }
+    .vdivide [class*='col-6']:not(:last-child):after {
+      background: #e0e0e0;
+      width: 1px;
+      content: "";
+      display:block;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      right: 0;
+      min-height: 70px;
+    }
+    .background-image {
+      background-image: url(assets/img/banner.png);
+      background-repeat: no-repeat;
+      background-position: top,center;
+      background-size: auto, contain;
+      padding: 20em 0 20em 0;
+      text-align: top;
+
+      background-size:contain;
+      display: block;
+
+      min-width:100%;
+      min-width:100%;
+      left: 0;
+      position: top;
+      right: 0;
+      z-index: 1;
+    }
+    #register{
+      background-color: #fafafa;
+      background-size: auto, cover;
+    }
+    #register h5{
+      font: italic;
+      font-size: 18px;
+      padding: 2%;
+      color: #2277bb;
+    }
+    #banner {
+      background-attachment: fixed;
+      background-position: top,center;
+      text-align: top, right;
+    }
+    #banner h2 {
+      color: #fff;
+    }
+    #banner h1,p {
+      font-size: 38px;
+      line-height: 1em;
+      text-align: right;
+      text-decoration: navy;
+      margin: 0 0 0.5em 0;
+      padding: 0;
+    }
+    #row h2,p{
+      font-size: 24px;
+      line-height: 1em;
+      padding: 1%;
+      align-content: left;
+      text-align: left;
+      color: #2277bb;
+      font-style: italic;
+      column-span:all
+    }
+    #table{
+      background-color: rgba(255, 255, 255, 0.63);
+      box-shadow: 2px 2px 20px black;
+      padding: 20em 0 20em 0;
+    }
+    .card{
+      min-height: 574px;
+    }
+    .background-card1{
+      background-image: url(assets/img/card1.png);
+      background-repeat: no-repeat;
+      background-position:top,center;
+      background-size: cover;
+      padding: 8em 0 8em 0;
+      text-align: center;
+      align-content: center;
+
+      display: block;
+    }
+    .background-card2{
+      background-image: url(assets/img/card2.png);
+      background-repeat: no-repeat;
+      background-position: top,center;
+      background-size: cover;
+      padding: 8em 0 8em 0;
+      text-align: center;
+      align-content: center;
+
+      display: block;
+    }
+    .card-title{
+      font-size: 32px;
+      line-height: 1em;
+      text-align: left;
+      color: #00569c;
+      margin: 0 0 0.5em 0;
+      padding: 1;
+    }
+    .card-subtitle{
+      font-size: 24px;
+      line-height: 1em;
+      text-align: left;
+      color: #00569c;
+      margin: 0 0 0.5em 0;
+      padding: 0;
+    }
+    .card-text p{
+      align-content: center;
+      text-align:center;
+      font-size: 22px;
+      line-height: 0em;
+      padding: 5px;
+    }
+    .card-text h4{
+      background-size: auto,;
+      align-content: center;
+      text-align:center;
+      font-size: 32px;
+      line-height: 1em;
+      color: #00569c;
+      margin: 0 0 0.5em 0;
+      padding: 1;
+    }
+    .card-footer {
+      align-content: center;
+      text-align:left;
+      font-size: 16px;
+      line-height: 0em;
+      padding: 2px;
+    }
+    .card-footer h5,p{
+      font-size: 16px;
+      color: #00569c;
+      padding: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <div id="banner" class="container">
+    <!---SE AGREGA ESTE DIV PARA EL FONDO---->
+    <div class="background-image">
+
+      <table id="table" align="right" width="45%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <tr>
+            <td align="center">
+
+              <div id="register" class="col col-md-1 col-sm-3 col-xs-12">
+                <tr>
+                  <td id="register">
+                    <div class="signup-form-container">
+                      <!-- form start -->
+                      <form role="form" id="register-form" autocomplete="off">
+                        <div class="form-header">
+                          <h5 align="center" class="form-title" style><i class="fa fa-user"></i><b>INGRES&Aacute; TUS DATOS Y TE CONTACTAREMOS<br> EN LA
+                            BREVEDAD:</b></h5>
+                          <div class="pull-right">
+                            <h6 class="form-title"><span class="glyphicon glyphicon-pencil"></span></h5>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="form-body">
+
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                          <input name="name" type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <span class="help-block" id="error"></span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="register">
+                    <div class="form-group">
+
+                      <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input name="name" type="text" class="form-control" placeholder="Apellido">
+                      </div>
+                      <span class="help-block" id="error"></span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="register">
+                    <div class="form-group">
+
+                      <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input name="name" type="text" class="form-control" placeholder="T&eacute;lefono">
+                      </div>
+                      <span class="help-block" id="error"></span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="register">
+                    <div class="form-group">
+
+                      <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                        <input name="email" type="text" class="form-control" placeholder="Email">
+                      </div>
+                      <span class="help-block" id="error"></span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="register" width="100%" height="25%">
+                    <div class="form-group">
+
+                      <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input name="name" type="text" class="form-control" placeholder="Ciudad">
+                      </div>
+                      <span class="help-block" id="error"></span>
+                    </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="register" width="100%" height="25%">
+                    <div class="form-footer" align="center">
+                      <button type="submit" class="btn btn-info">
+                        <span class="glyphicon glyphicon-log-in"></span> Enviar
+                      </button>
+                    </div>
+                  </td>
+                  <td id="register"></td>
+                </tr>
+              </div>
+            </td>
+          </tr>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="row" class="container">
+    <div class="row col col-md-6">
+      <td class="container" align="center">
+        <p>No te pierdas esta oportunidad de disfrutar de los<br> mejores paquetes <b>All-Inclusive de
+        Brasil y el Caribe</b><br>
+        a precios promocionales.</p>
+      </td>
+    </div>
+  </div>
+
+  <!--Cards-->
+
+  <div class="container">
+    <div class="row">
+      <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="card-body">
+            <td align="right"><img src="assets/img/icon2.png" alt="icono del card" align="right"></td>
+            <h5 class="card-title"><b>BUENOS AIRES</b></h5>
+            <h6 class="card-subtitle mb-2"><b>ARGENTINA</b></h6>
+            <div class="background-card1">
+
+              <table id="table" align="center" border="0" cellspacing="0" cellpadding="0">
+                <td>
+                  <div class="card-text">
+                    <h4 class="card-text"><b>U$D 2.119</b></h4>
+                    <p>Precio por persona</p>
+                    <p>en base doble</p>
+                    <div class="pull-right">
+                      <h6 class="form-title"><span class="glyphicon glyphicon-pencil"></span></h5>
+                        <a href="#" class="btn btn-primary"><b>RESERV&Aacute;</b></a>
+                    </div>
+                  </div>
+                </td>
+              </table>
+
+            </div>
+          </div>
+          <div class="card-footer">
+            <h5><b>Incluye:</b></h5>
+            <p>Traslado Aeropuerto/ Alojamiento Playa/. 7 noches de alojamiento en Playa</p>
+            <h5><b>Salida disponible:</b></h5>
+            <p>Salida 28/06/2019. 8 d&iacute;as.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="card-body">
+            <td align="right"><img src="assets/img/icon2.png" alt="icono del card" align="right"></td>
+            <h5 class="card-title"><b>BUENOS AIRES</b></h5>
+            <h6 class="card-subtitle mb-2"><b>ARGENTINA</b></h6>
+            <div class="background-card2">
+
+              <table id="table" align="center" border="0" cellspacing="0" cellpadding="0">
+                <td>
+                  <div class="card-text">
+                    <h4 class="card-text"><b>U$D 2.529</b></h4>
+                    <p>Precio por persona</p>
+                    <p>en base doble</p>
+                    <div class="pull-right">
+                      <h6 class="form-title"><span class="glyphicon glyphicon-pencil"></span></h5>
+                        <a href="#" class="btn btn-primary"><b>RESERV&Aacute;</b></a>
+                    </div>
+                  </div>
+                </td>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer">
+            <h5><b>Incluye:</b></h5>
+            <p>Traslado Aeropuerto/ Alojamiento Playa/. 7 noches de alojamiento en Playa</p>
+            <h5><b>Salida disponible:</b></h5>
+            <p>Salida 28/06/2019. 8 d&iacute;as.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
